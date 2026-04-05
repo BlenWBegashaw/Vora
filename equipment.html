@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Equipment - BuildRent</title>
+  <title>Equipment - Vora</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -14,94 +14,84 @@
     <h1 class="text-xl font-bold text-orange-500">Vora</h1>
 
     <ul class="hidden md:flex gap-6">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="hover:text-orange-500">Home</a></li>
       <li><a href="equipment.html" class="text-orange-500">Equipment</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="hover:text-orange-500">Contact</a></li>
     </ul>
   </nav>
 
 
   <!-- HEADER -->
-  <section class="py-16 bg-slate-50 text-center px-6">
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">
+  <section class="py-12 bg-slate-50 text-center px-6">
+    <h1 class="text-3xl md:text-4xl font-bold mb-3">
       Excavator Rental Offer
     </h1>
-    <p class="text-slate-600 max-w-2xl mx-auto">
-      High-performance excavators ready for heavy-duty construction projects.
+    <p class="text-slate-600 max-w-xl mx-auto text-sm md:text-base">
+      High-performance Hitachi excavators ready for heavy-duty construction work.
     </p>
   </section>
 
 
-  <!-- MACHINE SECTION -->
-  <section class="py-16 px-6">
-    <div class="max-w-5xl mx-auto">
+  <!-- EQUIPMENT CARD -->
+  <section class="py-12 px-6">
+    <div class="max-w-2xl mx-auto">
 
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+      <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden">
 
-        <!-- IMAGE -->
-        <div class="relative h-[350px] md:h-[450px]">
+        <!-- IMAGE (FULLY VISIBLE) -->
+        <div class="h-56 bg-slate-100 flex items-center justify-center p-4">
           <img 
-            src="https://images.unsplash.com/photo-1759745125627-333e78bc1edc?auto=format&fit=crop&w=1600&q=80"
-            alt="Hitachi Excavator"
-            class="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1759745125627-333e78bc1edc?auto=format&fit=crop&w=1200&q=80"
+            alt="Hitachi ZX350H-7G Excavator"
+            class="max-h-full object-contain"
           />
-
-          <!-- STATUS -->
-          <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-            3 Units Available
-          </div>
         </div>
 
         <!-- CONTENT -->
-        <div class="p-8">
+        <div class="p-5">
 
           <!-- TITLE -->
-          <h2 class="text-2xl md:text-3xl font-bold mb-2">
+          <h2 class="text-xl font-semibold mb-1">
             Hitachi ZX350H-7G Excavator
           </h2>
 
-          <p class="text-slate-500 mb-6">
-            Brand New • 2025 Model • Origin: Indonesia
+          <p class="text-sm text-slate-500 mb-4">
+            Brand New • 2025 Model • Indonesia
           </p>
 
+          <!-- AVAILABILITY -->
+          <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-4">
+            3 Units Available
+          </div>
+
           <!-- SPECS -->
-          <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="space-y-2 text-sm mb-5">
 
-            <div class="flex items-center gap-3">
-              <span class="text-orange-500 text-xl">🏗️</span>
-              <div>
-                <p class="text-sm text-slate-500">Weight Class</p>
-                <p class="font-semibold">35 Ton</p>
-              </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Weight Class</span>
+              <span class="font-medium">35 Ton</span>
             </div>
 
-            <div class="flex items-center gap-3">
-              <span class="text-orange-500 text-xl">🪣</span>
-              <div>
-                <p class="text-sm text-slate-500">Bucket</p>
-                <p class="font-semibold">1.80 m³ Rock Bucket</p>
-              </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Bucket</span>
+              <span class="font-medium">1.80 m³ Rock Bucket</span>
             </div>
 
-            <div class="flex items-center gap-3">
-              <span class="text-orange-500 text-xl">🔧</span>
-              <div>
-                <p class="text-sm text-slate-500">Arm</p>
-                <p class="font-semibold">3.2 m Heavy-Duty</p>
-              </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Arm</span>
+              <span class="font-medium">3.2 m Heavy-Duty</span>
             </div>
 
           </div>
 
           <!-- DESCRIPTION -->
-          <p class="text-slate-600 mb-8">
-            This heavy-duty Hitachi ZX350H-7G excavator is built for high productivity and demanding construction environments. 
-            Equipped with a large rock bucket and a strong arm, it delivers powerful performance for excavation, loading, and site work.
+          <p class="text-slate-600 text-sm mb-5">
+            Heavy-duty excavator designed for high productivity and demanding construction environments.
           </p>
 
           <!-- BUTTON -->
           <a href="contact.html"
-             class="block text-center bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg text-lg font-semibold transition">
+             class="block text-center bg-orange-500 hover:bg-orange-600 text-white py-2.5 rounded-lg text-sm font-medium transition">
             Request Quote
           </a>
 
@@ -112,10 +102,8 @@
     </div>
   </section>
 
-
-
   <!-- FOOTER -->
-  <footer class="bg-slate-900 text-white px-6 py-10 text-center">
+  <footer class="bg-slate-900 text-white px-6 py-8 text-center">
     <p class="text-sm text-slate-400">
       © 2026 Vora. All rights reserved.
     </p>
