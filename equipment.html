@@ -5,18 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Equipment - Vora</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Inter', sans-serif;
     }
 
-    /* Animation */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -28,7 +25,6 @@
       transform: translateY(0);
     }
 
-    /* Mobile menu */
     .menu-hidden {
       display: none;
     }
@@ -38,188 +34,207 @@
     }
   </style>
 </head>
+<body class="bg-white text-slate-900">
 
-<body class="bg-black text-white">
+  <!-- ================= NAVBAR ================= -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-<!-- ================= NAVBAR ================= -->
-<nav class="flex items-center justify-between px-6 py-4 border-b border-gray-800">
+      <h1 class="text-2xl font-bold text-orange-500">Vora</h1>
 
-  <h1 class="text-xl font-bold text-yellow-400">Vora</h1>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center gap-8 font-medium">
+        <li><a href="index.html" class="hover:text-orange-500 transition">Home</a></li>
+        <li><a href="equipment.html" class="text-orange-500">Equipment</a></li>
+        <li><a href="contact.html" class="hover:text-orange-500 transition">Contact</a></li>
+      </ul>
 
-  <!-- Desktop -->
-  <ul class="hidden md:flex gap-8">
-    <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
-    <li><a href="equipment.html" class="text-yellow-400">Equipment</a></li>
-    <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
-  </ul>
-
-  <!-- Mobile Button -->
-  <button id="menuBtn" class="md:hidden text-yellow-400 text-2xl">☰</button>
-</nav>
-
-<!-- MOBILE MENU -->
-<div id="mobileMenu" class="menu-hidden bg-black border-b border-gray-800 px-6 py-4">
-  <ul class="space-y-4">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="equipment.html" class="text-yellow-400">Equipment</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div>
-
-
-<!-- ================= HEADER ================= -->
-<section class="text-center py-16 px-6 fade-up">
-  <h1 class="text-3xl md:text-5xl font-bold text-yellow-400 mb-4">
-    Excavator Rental Offer
-  </h1>
-  <p class="text-gray-400 max-w-xl mx-auto">
-    Premium heavy-duty excavators available for mining, quarry, and construction projects.
-  </p>
-</section>
-
-
-<!-- ================= CARD ================= -->
-<section class="mt-8 px-6 max-w-5xl mx-auto fade-up">
-
-  <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-700 hover:border-yellow-400 transition grid md:grid-cols-2 shadow-lg">
-
-    <!-- IMAGE -->
-    <div class="bg-black p-6 flex items-center justify-center">
-      <img src="images/pic5.png"
-           alt="Excavator"
-           class="w-full max-h-80 object-contain rounded-xl transition hover:scale-105 duration-500">
+      <!-- Mobile Button -->
+      <button id="menuBtn" class="md:hidden text-3xl text-orange-500">
+        ☰
+      </button>
     </div>
 
-    <!-- DETAILS -->
-    <div class="p-8 flex flex-col justify-between">
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="menu-hidden md:hidden border-t border-slate-200 bg-white">
+      <div class="px-6 py-4 space-y-4 font-medium">
+        <a href="index.html" class="block hover:text-orange-500">Home</a>
+        <a href="equipment.html" class="block text-orange-500">Equipment</a>
+        <a href="contact.html" class="block hover:text-orange-500">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-      <div>
-        <h2 class="text-2xl md:text-3xl font-bold text-yellow-400">
-          Hitachi ZX350H-7G Excavator (2025)
-        </h2>
 
-        <p class="text-gray-400 mt-3">
-          Brand New • Origin: Indonesia
-        </p>
+  <!-- ================= HEADER ================= -->
+  <section class="py-16 px-6 text-center bg-orange-50 fade-up">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+        Excavator Rental Offer
+      </h1>
 
-        <!-- SPECS -->
-        <div class="mt-6 space-y-3 text-sm text-gray-300">
+      <p class="text-slate-600 text-lg">
+        Brand new heavy-duty excavators ready for mining, quarry, and major construction projects.
+      </p>
+    </div>
+  </section>
 
-          <div class="flex justify-between border-b border-gray-800 pb-2">
-            <span>🏗️ Weight</span>
-            <span class="text-white font-medium">35 Ton</span>
+
+  <!-- ================= EQUIPMENT CARD ================= -->
+  <section class="py-14 px-6 fade-up">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition duration-300 grid md:grid-cols-2">
+
+        <!-- IMAGE -->
+        <div class="bg-orange-50 p-6 flex items-center justify-center">
+          <img 
+            src="images/pic5.png"
+            alt="Hitachi ZX350H-7G Excavator"
+            class="w-full max-h-80 object-contain transition duration-500 hover:scale-105"
+          >
+        </div>
+
+        <!-- DETAILS -->
+        <div class="p-8 md:p-10 flex flex-col justify-between">
+
+          <div>
+            <!-- Badge -->
+            <div class="inline-flex items-center bg-orange-100 text-orange-600 text-sm font-semibold px-4 py-2 rounded-full mb-5">
+              3 Units Available
+            </div>
+
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">
+              Hitachi ZX350H-7G
+            </h2>
+
+            <p class="text-slate-500 mb-6">
+              Brand New • 2025 Model • Origin: Indonesia
+            </p>
+
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Built for high productivity and demanding environments, the Hitachi ZX350H-7G is ideal for quarry work, excavation, loading, and heavy construction.
+            </p>
+
+            <!-- Specs -->
+            <div class="space-y-4">
+
+              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <span class="text-slate-500">🏗️ Weight Class</span>
+                <span class="font-semibold text-slate-900">35 Ton</span>
+              </div>
+
+              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <span class="text-slate-500">🪣 Bucket</span>
+                <span class="font-semibold text-slate-900">1.80 m³ Rock Bucket</span>
+              </div>
+
+              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <span class="text-slate-500">🔧 Arm</span>
+                <span class="font-semibold text-slate-900">3.2 m Heavy-Duty</span>
+              </div>
+
+            </div>
           </div>
 
-          <div class="flex justify-between border-b border-gray-800 pb-2">
-            <span>🪨 Bucket</span>
-            <span class="text-white font-medium">1.80 m³</span>
-          </div>
+          <!-- Quote Section -->
+          <div class="mt-8">
 
-          <div class="flex justify-between border-b border-gray-800 pb-2">
-            <span>🔧 Arm</span>
-            <span class="text-white font-medium">3.2 m</span>
-          </div>
+            <select
+              id="machineSelect"
+              class="w-full p-4 rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:border-orange-500 mb-4"
+            >
+              <option value="">Select Number of Units</option>
+              <option value="1 Unit">1 Unit</option>
+              <option value="2 Units">2 Units</option>
+              <option value="3 Units">3 Units</option>
+            </select>
 
-          <div class="flex justify-between">
-            <span>📦 Units</span>
-            <span class="text-green-400 font-medium">3 Available</span>
+            <button
+              onclick="bookMachine()"
+              class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-semibold text-lg transition"
+            >
+              Get Quote
+            </button>
+
           </div>
 
         </div>
-      </div>
-
-      <!-- SELECT + BUTTON -->
-      <div class="mt-8">
-
-        <select id="machineSelect"
-                class="w-full p-3 rounded-lg bg-black border border-gray-700 text-white focus:border-yellow-400 outline-none">
-          <option value="">Select Units</option>
-          <option value="1 Unit">1 Unit</option>
-          <option value="2 Units">2 Units</option>
-          <option value="3 Units">3 Units</option>
-        </select>
-
-        <button onclick="bookMachine()"
-                class="mt-4 w-full bg-yellow-400 text-black py-3 rounded-xl font-bold hover:bg-yellow-300 transition">
-          Get Quote
-        </button>
 
       </div>
 
     </div>
-
-  </div>
-
-</section>
+  </section>
 
 
-<!-- ================= CTA ================= -->
-<section class="text-center py-16 px-6 fade-up">
-  <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4">
-    Ready to Rent?
-  </h2>
-  <p class="text-gray-400 mb-6">
-    Contact us today and secure your excavator.
-  </p>
+  <!-- ================= CTA ================= -->
+  <section class="py-16 px-6 bg-orange-500 text-white text-center fade-up">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Need Heavy Equipment for Your Project?
+      </h2>
 
-  <a href="contact.html"
-     class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">
-    Contact Us
-  </a>
-</section>
+      <p class="text-orange-100 mb-8 text-lg">
+        Contact Vora today and reserve one of our available excavators. 🚜
+      </p>
 
-
-<!-- ================= FOOTER ================= -->
-<footer class="border-t border-gray-800 text-center py-8 text-gray-500 text-sm">
-  © 2026 Vora. All rights reserved.
-</footer>
+      <a href="contact.html"
+         class="inline-block bg-white text-orange-500 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition">
+        Contact Us
+      </a>
+    </div>
+  </section>
 
 
-<!-- ================= SCRIPTS ================= -->
-<script>
-
-// MENU
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-
-function toggleMenu() {
-  mobileMenu.classList.toggle("menu-show");
-  mobileMenu.classList.toggle("menu-hidden");
-}
-
-menuBtn.addEventListener("click", toggleMenu);
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-slate-200 py-8 text-center text-slate-500 text-sm">
+    © 2026 Vora. All rights reserved.
+  </footer>
 
 
-// FADE ANIMATION
-const faders = document.querySelectorAll(".fade-up");
+  <!-- ================= SCRIPT ================= -->
+  <script>
+    // Mobile Menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-const appear = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('menu-hidden');
+      mobileMenu.classList.toggle('menu-show');
+    });
+
+    // Fade Animation
+    const faders = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    faders.forEach(el => observer.observe(el));
+
+    // Quote Button
+    function bookMachine() {
+      const selected = document.getElementById("machineSelect").value;
+
+      if (!selected) {
+        alert("Please select the number of units first 😊");
+        return;
+      }
+
+      const message =
+`Machine: Hitachi ZX350H-7G
+Units Requested: ${selected}
+
+Please provide availability and pricing.`;
+
+      window.location.href =
+        "contact.html?message=" + encodeURIComponent(message);
     }
-  });
-});
-
-faders.forEach(el => appear.observe(el));
-
-
-// BOOK MACHINE
-function bookMachine() {
-  const selected = document.getElementById("machineSelect").value;
-
-  if (!selected) {
-    alert("Please select number of units");
-    return;
-  }
-
-  const message = `Machine: Hitachi ZX350H-7G\nUnits: ${selected}\n\nPlease provide availability and pricing.`;
-
-  window.location.href =
-    "contact.html?message=" + encodeURIComponent(message);
-}
-
-</script>
+  </script>
 
 </body>
 </html>
