@@ -29,13 +29,13 @@
       <li><a href="contact.html" class="hover:text-orange-500">Contact</a></li>
     </ul>
 
-    <!-- Hamburger Button (Mobile Only) -->
+    <!-- Hamburger Button -->
     <button id="menuBtn" class="md:hidden text-3xl">
       ☰
     </button>
   </nav>
 
-  <!-- Mobile Menu (Mobile Only) -->
+  <!-- Mobile Menu -->
   <div id="mobileMenu" class="hidden flex flex-col px-6 py-4 space-y-4 border-b md:hidden bg-white">
     <a href="index.html" class="hover:text-orange-500">Home</a>
     <a href="equipment.html" class="hover:text-orange-500">Equipment</a>
@@ -44,9 +44,7 @@
 
   <!-- HEADER -->
   <section class="py-16 bg-orange-50 text-center px-6">
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">
-      Contact Us
-    </h1>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Contact Us</h1>
     <p class="text-slate-600 max-w-2xl mx-auto">
       Get in touch with us to discuss your project and request a quote.
     </p>
@@ -98,32 +96,20 @@
 
         <form id="contactForm" class="space-y-5">
 
-          <div>
-            <label class="block mb-1 text-sm">Full Name *</label>
-            <input type="text" id="name" required
-              class="w-full border border-slate-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
-          </div>
+          <input type="text" id="name" placeholder="Full Name *" required
+            class="w-full border px-4 py-3 rounded-lg">
 
-          <div>
-            <label class="block mb-1 text-sm">Email *</label>
-            <input type="email" id="email" required
-              class="w-full border border-slate-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
-          </div>
+          <input type="email" id="email" placeholder="Email *" required
+            class="w-full border px-4 py-3 rounded-lg">
 
-          <div>
-            <label class="block mb-1 text-sm">Phone *</label>
-            <input type="tel" id="phone" required
-              class="w-full border border-slate-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
-          </div>
+          <input type="tel" id="phone" placeholder="Phone *" required
+            class="w-full border px-4 py-3 rounded-lg">
 
-          <div>
-            <label class="block mb-1 text-sm">Message *</label>
-            <textarea id="message" rows="4" required
-              class="w-full border border-slate-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none"></textarea>
-          </div>
+          <textarea id="message" rows="4" placeholder="Message *" required
+            class="w-full border px-4 py-3 rounded-lg"></textarea>
 
           <button type="submit"
-            class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-semibold transition">
+            class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-semibold">
             Send Message
           </button>
 
@@ -134,47 +120,51 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-200 py-8 text-center text-slate-500 text-sm">
+  <footer class="border-t py-8 text-center text-slate-500 text-sm">
     © 2026 Vora. All rights reserved.
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- SCRIPT (FIXED 100%) -->
   <script>
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+    document.addEventListener("DOMContentLoaded", function () {
 
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
 
-    // Fix resize issue
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768) {
-        mobileMenu.classList.add('hidden');
-      }
-    });
-
-    // Close menu when clicking a link (optional UX improvement)
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+      // Hamburger toggle
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
-    });
 
-    // Auto-fill message from equipment page
-    const params = new URLSearchParams(window.location.search);
-    const messageParam = params.get(\"message\");
+      // Close menu on resize to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
 
-    if (messageParam) {
-      document.getElementById(\"message\").value = messageParam;
-    }
+      // Close menu when clicking link
+      document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
 
-    // Form submit (demo)
-    document.getElementById(\"contactForm\").addEventListener(\"submit\", function(e) {
-      e.preventDefault();
-      alert(\"Thank you! We will contact you soon.\");
-      this.reset();
+      // Auto-fill message from URL
+      const params = new URLSearchParams(window.location.search);
+      const messageParam = params.get("message");
+
+      if (messageParam) {
+        document.getElementById("message").value = messageParam;
+      }
+
+      // Form submit
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Thank you! We will contact you soon.");
+        this.reset();
+      });
+
     });
   </script>
 
