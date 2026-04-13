@@ -13,20 +13,30 @@
   <nav class="flex items-center justify-between px-6 py-4 border-b sticky top-0 bg-white z-50">
     <h1 class="text-xl font-bold text-orange-500">VORA</h1>
 
+    <!-- Desktop Menu -->
     <ul class="hidden md:flex gap-6 items-center">
       <li><a href="index.html" class="hover:text-orange-500">Home</a></li>
       <li><a href="equipment.html" class="hover:text-orange-500">Equipment</a></li>
       <li><a href="contact.html" class="hover:text-orange-500">Contact</a></li>
     </ul>
+
+    <!-- Hamburger Button (Mobile Only) -->
+    <button id="menuBtn" class="md:hidden text-3xl">
+      ☰
+    </button>
   </nav>
 
+  <!-- Mobile Menu (Mobile Only) -->
+  <div id="mobileMenu" class="hidden flex flex-col px-6 py-4 space-y-4 border-b md:hidden bg-white">
+    <a href="index.html" class="hover:text-orange-500">Home</a>
+    <a href="equipment.html" class="hover:text-orange-500">Equipment</a>
+    <a href="contact.html" class="hover:text-orange-500">Contact</a>
+  </div>
 
   <!-- HERO -->
   <section id="home" class="relative">
-
     <div class="relative h-[600px] md:h-[700px] flex items-center">
 
-      <!-- IMAGE -->
       <div class="absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1753711849472-86711a554fe8?auto=format&fit=crop&w=1600&q=80"
@@ -36,10 +46,8 @@
         <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
       </div>
 
-      <!-- CONTENT -->
       <div class="relative z-10 max-w-7xl mx-auto px-6 text-white">
         <div class="max-w-2xl">
-
           <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Build the Future With Confidence
           </h1>
@@ -49,146 +57,66 @@
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4">
-
-            <a href="contact.html"
-               class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold text-center">
+            <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold text-center">
               Get a Quote →
             </a>
 
-            <a href="equipment.html"
-               class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg text-lg text-center">
+            <a href="equipment.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg text-lg text-center">
               View Equipment
             </a>
-
           </div>
-
         </div>
       </div>
     </div>
+  </section>
 
- <!-- ABOUT -->
-<section id="about" class="py-20 bg-white">
+  <!-- ABOUT -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
 
-  <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
 
-    <!-- TOP CONTENT -->
-    <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+            About BuildRent
+          </h2>
 
-      <!-- TEXT -->
-      <div>
-        <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
-          About BuildRent
-        </h2>
+          <p class="text-lg text-slate-600 mb-6">
+            BuildRent is your trusted partner for construction machinery rental.
+          </p>
 
-        <p class="text-lg text-slate-600 mb-6">
-          BuildRent is your trusted partner for construction machinery rental. We provide top-quality equipment and exceptional service to help you complete your projects on time and within budget.
-        </p>
+          <div class="flex gap-10 mt-8">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-orange-500">3+</div>
+              <div class="text-slate-500 text-sm">Machines</div>
+            </div>
 
-        <p class="text-lg text-slate-600 mb-6">
-          With a fleet of powerful machines, we serve contractors and developers with reliability, speed, and professionalism.
-        </p>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-orange-500">100%</div>
+              <div class="text-slate-500 text-sm">Available</div>
+            </div>
 
-        <!-- STATS -->
-        <div class="flex gap-10 mt-8">
-
-          <div class="text-center">
-            <div class="text-3xl font-bold text-orange-500">3+</div>
-            <div class="text-slate-500 text-sm">Machines</div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-orange-500">24/7</div>
+              <div class="text-slate-500 text-sm">Support</div>
+            </div>
           </div>
+        </div>
 
-          <div class="text-center">
-            <div class="text-3xl font-bold text-orange-500">100%</div>
-            <div class="text-slate-500 text-sm">Available</div>
-          </div>
-
-          <div class="text-center">
-            <div class="text-3xl font-bold text-orange-500">24/7</div>
-            <div class="text-slate-500 text-sm">Support</div>
-          </div>
-
+        <div class="grid grid-cols-2 gap-4">
+          <img src="https://images.unsplash.com/photo-1774867559682-e856ab83a7db?auto=format&fit=crop&w=800&q=80" class="rounded-lg" />
+          <img src="https://images.unsplash.com/photo-1773050831930-c50055c760e9?auto=format&fit=crop&w=800&q=80" class="rounded-lg mt-8" />
         </div>
       </div>
-
-      <!-- IMAGES -->
-      <div class="grid grid-cols-2 gap-4">
-
-        <div class="h-56 md:h-64 rounded-lg overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1774867559682-e856ab83a7db?auto=format&fit=crop&w=800&q=80"
-               class="w-full h-full object-cover">
-        </div>
-
-        <div class="h-56 md:h-64 rounded-lg overflow-hidden mt-8">
-          <img src="https://images.unsplash.com/photo-1773050831930-c50055c760e9?auto=format&fit=crop&w=800&q=80"
-               class="w-full h-full object-cover">
-        </div>
-
-      </div>
-
     </div>
-
-
-    <!-- FEATURES -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-      <!-- FEATURE 1 -->
-      <div class="bg-slate-50 p-6 rounded-lg hover:shadow-lg transition">
-        <div class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 text-orange-600 text-xl">
-          🛡️
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Reliable Equipment</h3>
-        <p class="text-slate-600 text-sm">
-          Well-maintained machinery you can count on.
-        </p>
-      </div>
-
-      <!-- FEATURE 2 -->
-      <div class="bg-slate-50 p-6 rounded-lg hover:shadow-lg transition">
-        <div class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 text-orange-600 text-xl">
-          ⏱️
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Flexible Rental</h3>
-        <p class="text-slate-600 text-sm">
-          Daily, weekly, or monthly rental options.
-        </p>
-      </div>
-
-      <!-- FEATURE 3 -->
-      <div class="bg-slate-50 p-6 rounded-lg hover:shadow-lg transition">
-        <div class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 text-orange-600 text-xl">
-          🔧
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Expert Support</h3>
-        <p class="text-slate-600 text-sm">
-          Technical assistance throughout your rental.
-        </p>
-      </div>
-
-      <!-- FEATURE 4 -->
-      <div class="bg-slate-50 p-6 rounded-lg hover:shadow-lg transition">
-        <div class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 text-orange-600 text-xl">
-          🏆
-        </div>
-        <h3 class="text-lg font-semibold mb-2">Quality Service</h3>
-        <p class="text-slate-600 text-sm">
-          Committed to excellence in every project.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- FOOTER -->
   <footer class="bg-slate-900 text-white px-6 py-10">
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-
       <div>
         <h2 class="text-orange-400 font-bold text-lg mb-2">VORA</h2>
-        <p class="text-sm text-slate-400">
-          Your trusted partner in construction equipment rental.
-        </p>
+        <p class="text-sm text-slate-400">Your trusted partner.</p>
       </div>
 
       <div>
@@ -203,11 +131,26 @@
       <div>
         <h3 class="font-semibold mb-2">Contact</h3>
         <p class="text-sm text-slate-400">email@example.com</p>
-        <p class="text-sm text-slate-400">+1 234 567 890</p>
       </div>
-
     </div>
   </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Ensure menu resets on resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
 
 </body>
 </html>
