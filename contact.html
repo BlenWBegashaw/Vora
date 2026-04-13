@@ -42,7 +42,7 @@
     <a href="contact.html" class="hover:text-orange-500">Contact</a>
   </div>
 
-  <!-- ================= HEADER ================= -->
+  <!-- HEADER -->
   <section class="py-16 bg-orange-50 text-center px-6">
     <h1 class="text-3xl md:text-5xl font-bold mb-4">
       Contact Us
@@ -52,8 +52,7 @@
     </p>
   </section>
 
-
-  <!-- ================= CONTACT SECTION ================= -->
+  <!-- CONTACT SECTION -->
   <section class="py-16 px-6">
     <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
 
@@ -63,7 +62,6 @@
 
         <div class="space-y-6">
 
-          <!-- PHONE -->
           <div class="flex gap-4">
             <div class="bg-orange-100 p-3 rounded-lg text-orange-600 text-xl">📞</div>
             <div>
@@ -73,7 +71,6 @@
             </div>
           </div>
 
-          <!-- EMAIL -->
           <div class="flex gap-4">
             <div class="bg-orange-100 p-3 rounded-lg text-orange-600 text-xl">✉️</div>
             <div>
@@ -83,7 +80,6 @@
             </div>
           </div>
 
-          <!-- LOCATION -->
           <div class="flex gap-4">
             <div class="bg-orange-100 p-3 rounded-lg text-orange-600 text-xl">📍</div>
             <div>
@@ -95,7 +91,6 @@
 
         </div>
       </div>
-
 
       <!-- FORM -->
       <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200">
@@ -138,33 +133,49 @@
     </div>
   </section>
 
-
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="border-t border-slate-200 py-8 text-center text-slate-500 text-sm">
     © 2026 Vora. All rights reserved.
   </footer>
 
-
-  <!-- ================= SCRIPT ================= -->
+  <!-- SCRIPT -->
   <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fix resize issue
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Close menu when clicking a link (optional UX improvement)
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
 
     // Auto-fill message from equipment page
     const params = new URLSearchParams(window.location.search);
-    const messageParam = params.get("message");
+    const messageParam = params.get(\"message\");
 
     if (messageParam) {
-      document.getElementById("message").value = messageParam;
+      document.getElementById(\"message\").value = messageParam;
     }
 
     // Form submit (demo)
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
+    document.getElementById(\"contactForm\").addEventListener(\"submit\", function(e) {
       e.preventDefault();
-
-      alert("Thank you! We will contact you soon.");
-
+      alert(\"Thank you! We will contact you soon.\");
       this.reset();
     });
-
   </script>
 
 </body>
