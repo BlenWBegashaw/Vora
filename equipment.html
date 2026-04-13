@@ -24,16 +24,9 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    .menu-hidden {
-      display: none;
-    }
-
-    .menu-show {
-      display: block;
-    }
   </style>
 </head>
+
 <body class="bg-white text-slate-900">
 
   <!-- NAVBAR -->
@@ -60,24 +53,21 @@
     <a href="contact.html" class="hover:text-orange-500">Contact</a>
   </div>
 
-  <!-- ================= HEADER ================= -->
+  <!-- HEADER -->
   <section class="py-16 px-6 text-center bg-orange-50 fade-up">
     <div class="max-w-3xl mx-auto">
       <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
         Excavator Rental Offer
       </h1>
-
       <p class="text-slate-600 text-lg">
         Brand new heavy-duty excavators ready for mining, quarry, and major construction projects.
       </p>
     </div>
   </section>
 
-
-  <!-- ================= EQUIPMENT CARD ================= -->
+  <!-- EQUIPMENT CARD -->
   <section class="py-14 px-6 fade-up">
     <div class="max-w-5xl mx-auto">
-
       <div class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition duration-300 grid md:grid-cols-2">
 
         <!-- IMAGE -->
@@ -93,7 +83,6 @@
         <div class="p-8 md:p-10 flex flex-col justify-between">
 
           <div>
-            <!-- Badge -->
             <div class="inline-flex items-center bg-orange-100 text-orange-600 text-sm font-semibold px-4 py-2 rounded-full mb-5">
               3 Units Available
             </div>
@@ -112,76 +101,68 @@
 
             <!-- Specs -->
             <div class="space-y-4">
-
-              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+              <div class="flex justify-between border-b pb-3">
                 <span class="text-slate-500">🏗️ Weight Class</span>
-                <span class="font-semibold text-slate-900">35 Ton</span>
+                <span class="font-semibold">35 Ton</span>
               </div>
 
-              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+              <div class="flex justify-between border-b pb-3">
                 <span class="text-slate-500">🪣 Bucket</span>
-                <span class="font-semibold text-slate-900">1.80 m³ Rock Bucket</span>
+                <span class="font-semibold">1.80 m³ Rock Bucket</span>
               </div>
 
-              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+              <div class="flex justify-between border-b pb-3">
                 <span class="text-slate-500">🔧 Arm</span>
-                <span class="font-semibold text-slate-900">3.2 m Heavy-Duty</span>
+                <span class="font-semibold">3.2 m Heavy-Duty</span>
               </div>
-
             </div>
           </div>
 
-          <!-- Quote Section -->
+          <!-- Quote -->
           <div class="mt-8">
-
-            <select
-              id="machineSelect"
-              class="w-full p-4 rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:border-orange-500 mb-4"
-            >
+            <select id="machineSelect" class="w-full p-4 rounded-xl border mb-4">
               <option value="">Select Number of Units</option>
               <option value="1 Unit">1 Unit</option>
               <option value="2 Units">2 Units</option>
               <option value="3 Units">3 Units</option>
             </select>
 
-            <button
-              onclick="bookMachine()"
-              class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-semibold text-lg transition"
-            >
+            <button onclick="bookMachine()" class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl font-semibold">
               Get Quote
             </button>
-
           </div>
 
         </div>
-
       </div>
-
     </div>
   </section>
 
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="border-t border-slate-200 py-8 text-center text-slate-500 text-sm">
+  <!-- FOOTER -->
+  <footer class="border-t py-8 text-center text-slate-500 text-sm">
     © 2026 Vora. All rights reserved.
   </footer>
 
-
-  <!-- ================= SCRIPT ================= -->
+  <!-- SCRIPT -->
   <script>
-    // Mobile Menu
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
+    // Toggle menu
     menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('menu-hidden');
-      mobileMenu.classList.toggle('menu-show');
+      mobileMenu.classList.toggle('hidden');
     });
 
-    // Fade Animation
+    // Fix resize bug
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Fade animation
     const faders = document.querySelectorAll('.fade-up');
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
@@ -191,23 +172,18 @@
 
     faders.forEach(el => observer.observe(el));
 
-    // Quote Button
+    // Quote button
     function bookMachine() {
-      const selected = document.getElementById("machineSelect").value;
+      const selected = document.getElementById(\"machineSelect\").value;
 
       if (!selected) {
-        alert("Please select the number of units first 😊");
+        alert(\"Please select the number of units first 😊\");
         return;
       }
 
-      const message =
-`Machine: Hitachi ZX350H-7G
-Units Requested: ${selected}
+      const message = `Machine: Hitachi ZX350H-7G\nUnits Requested: ${selected}\n\nPlease provide availability and pricing.`;
 
-Please provide availability and pricing.`;
-
-      window.location.href =
-        "contact.html?message=" + encodeURIComponent(message);
+      window.location.href = \"contact.html?message=\" + encodeURIComponent(message);
     }
   </script>
 
