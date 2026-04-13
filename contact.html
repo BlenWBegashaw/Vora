@@ -22,12 +22,25 @@
   <nav class="flex items-center justify-between px-6 py-4 border-b sticky top-0 bg-white z-50">
     <h1 class="text-xl font-bold text-orange-500">VORA</h1>
 
+    <!-- Desktop Menu -->
     <ul class="hidden md:flex gap-6 items-center">
       <li><a href="index.html" class="hover:text-orange-500">Home</a></li>
       <li><a href="equipment.html" class="hover:text-orange-500">Equipment</a></li>
       <li><a href="contact.html" class="hover:text-orange-500">Contact</a></li>
     </ul>
+
+    <!-- Hamburger Button (Mobile Only) -->
+    <button id="menuBtn" class="md:hidden text-3xl">
+      ☰
+    </button>
   </nav>
+
+  <!-- Mobile Menu (Mobile Only) -->
+  <div id="mobileMenu" class="hidden flex flex-col px-6 py-4 space-y-4 border-b md:hidden bg-white">
+    <a href="index.html" class="hover:text-orange-500">Home</a>
+    <a href="equipment.html" class="hover:text-orange-500">Equipment</a>
+    <a href="contact.html" class="hover:text-orange-500">Contact</a>
+  </div>
 
   <!-- ================= HEADER ================= -->
   <section class="py-16 bg-orange-50 text-center px-6">
