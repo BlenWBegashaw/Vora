@@ -89,82 +89,104 @@
       </div>
 
       <!-- FORM -->
-      <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200">
-        <h2 class="text-2xl font-semibold mb-6">Send Us a Message</h2>
+<div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200">
+  <h2 class="text-2xl font-semibold mb-6">Send Us a Message</h2>
 
-        <form id="contactForm" class="space-y-5">
+  <form 
+    id="contactForm"
+    action="https://formspree.io/f/xlgabnjw"
+    method="POST"
+    class="space-y-5"
+  >
 
-          <input type="text" id="name" placeholder="Full Name *" required
-            class="w-full border px-4 py-3 rounded-lg">
+    <input type="text" name="name" placeholder="Full Name *" required
+      class="w-full border px-4 py-3 rounded-lg">
 
-          <input type="email" id="email" placeholder="Email *" required
-            class="w-full border px-4 py-3 rounded-lg">
+    <input type="email" name="email" placeholder="Email *" required
+      class="w-full border px-4 py-3 rounded-lg">
 
-          <input type="tel" id="phone" placeholder="Phone *" required
-            class="w-full border px-4 py-3 rounded-lg">
+    <input type="tel" name="phone" placeholder="Phone *" required
+      class="w-full border px-4 py-3 rounded-lg">
 
-          <textarea id="message" rows="4" placeholder="Message *" required
-            class="w-full border px-4 py-3 rounded-lg"></textarea>
+    <textarea name="message" id="message" rows="4" placeholder="Message *" required
+      class="w-full border px-4 py-3 rounded-lg"></textarea>
 
-          <button type="submit"
-            class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-semibold">
-            Send Message
-          </button>
+    <button type="submit"
+      class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-semibold">
+      Send Message
+    </button>
 
-        </form>
-      </div>
+  </form>
+</div>
 
-    </div>
-  </section>
+</div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="border-t py-8 text-center text-slate-500 text-sm">
-    © 2026 Vora. All rights reserved.
-  </footer>
+<!-- FOOTER -->
+<footer class="border-t py-8 text-center text-slate-500 text-sm">
+  © 2026 Vora. All rights reserved.
+</footer>
 
-  <!-- SCRIPT (FIXED 100%) -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-      // Hamburger toggle
-      menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
+  // Hamburger toggle
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
 
-      // Close menu on resize to desktop
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
-          mobileMenu.classList.add('hidden');
-        }
-      });
+  // Close menu on resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
 
-      // Close menu when clicking link
-      document.querySelectorAll('#mobileMenu a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-        });
-      });
-
-      // Auto-fill message from URL
-      const params = new URLSearchParams(window.location.search);
-      const messageParam = params.get("message");
-
-      if (messageParam) {
-        document.getElementById("message").value = messageParam;
-      }
-
-      // Form submit
-      document.getElementById("contactForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        alert("Thank you! We will contact you soon.");
-        this.reset();
-      });
-
+  // Close menu when clicking link
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
     });
-  </script>
+  });
+
+  // Auto-fill message from URL
+  const params = new URLSearchParams(window.location.search);
+  const messageParam = params.get("message");
+
+  if (messageParam) {
+    document.getElementById("message").value = messageParam;
+  }
+
+  // ✅ Formspree submit (FIXED)
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      alert("Thank you! We will contact you soon.");
+      form.reset();
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+
+});
+</script>
 
 </body>
 </html>
